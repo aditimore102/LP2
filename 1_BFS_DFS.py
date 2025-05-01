@@ -35,6 +35,27 @@ def bfs(graph, start):
                 queue.append(neighbor)
 
 # Main program
+def main():
+    graph = {}
+    n = int(input("Enter number of edges: "))
+
+    print("Enter edges (format: node1 node2):")
+    for _ in range(n):
+        u, v = input().split()
+        add_edge(graph, u, v)
+
+    start_node = input("Enter starting node for DFS and BFS: ")
+
+    print("\nDFS Traversal:")
+    dfs(graph, start_node, set())
+
+    print("\n\nBFS Traversal:")
+    bfs(graph, start_node)
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 
